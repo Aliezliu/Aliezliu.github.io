@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法与数据结构," />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="单链表从尾到头打印的四种算法 首先实现单链表的结构：123456struct ListNode&amp;#123;    int data;    ListNode* next;    ListNode(int d):data(d), next(nullptr)&amp;#123;&amp;#125;&amp;#125;;  借用栈倒序输出链表因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表">
-<meta name="keywords" content="算法与数据结构">
+<meta name="description" content="数据结构 首先实现单链表的结构：123456struct ListNode&amp;#123;    int data;    ListNode* next;    ListNode(int d):data(d), next(nullptr)&amp;#123;&amp;#125;&amp;#125;;  借用栈倒序输出链表因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表后面的元素先出栈。1">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单链表从尾到头打印的四种算法">
 <meta property="og:url" content="http://Aliezliu.github.io/2018/07/23/单链表从尾到头打印的四种算法/index.html">
 <meta property="og:site_name" content="Aliez&#39;s Blog">
-<meta property="og:description" content="单链表从尾到头打印的四种算法 首先实现单链表的结构：123456struct ListNode&amp;#123;    int data;    ListNode* next;    ListNode(int d):data(d), next(nullptr)&amp;#123;&amp;#125;&amp;#125;;  借用栈倒序输出链表因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表">
+<meta property="og:description" content="数据结构 首先实现单链表的结构：123456struct ListNode&amp;#123;    int data;    ListNode* next;    ListNode(int d):data(d), next(nullptr)&amp;#123;&amp;#125;&amp;#125;;  借用栈倒序输出链表因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表后面的元素先出栈。1">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201110/2/0_13175655237TGo.gif">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201110/2/0_1317565566SEbH.gif">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201110/2/0_1317565598ry1Z.gif">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201110/2/0_13175657179L43.gif">
-<meta property="og:updated_time" content="2018-07-23T12:49:59.228Z">
+<meta property="og:updated_time" content="2018-07-23T12:55:27.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单链表从尾到头打印的四种算法">
-<meta name="twitter:description" content="单链表从尾到头打印的四种算法 首先实现单链表的结构：123456struct ListNode&amp;#123;    int data;    ListNode* next;    ListNode(int d):data(d), next(nullptr)&amp;#123;&amp;#125;&amp;#125;;  借用栈倒序输出链表因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表">
+<meta name="twitter:description" content="数据结构 首先实现单链表的结构：123456struct ListNode&amp;#123;    int data;    ListNode* next;    ListNode(int d):data(d), next(nullptr)&amp;#123;&amp;#125;&amp;#125;;  借用栈倒序输出链表因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表后面的元素先出栈。1">
 <meta name="twitter:image" content="http://hi.csdn.net/attachment/201110/2/0_13175655237TGo.gif">
 
 
@@ -366,7 +366,7 @@
       
 
       
-        <h1 id="单链表从尾到头打印的四种算法"><a href="#单链表从尾到头打印的四种算法" class="headerlink" title="单链表从尾到头打印的四种算法"></a>单链表从尾到头打印的四种算法</h1><hr>
+        <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><hr>
 <p>首先实现单链表的结构：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    ListNode* next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> d):data(d), next(<span class="literal">nullptr</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="借用栈倒序输出链表"><a href="#借用栈倒序输出链表" class="headerlink" title="借用栈倒序输出链表"></a>借用栈倒序输出链表</h2><p>因为栈是先进后出，把链表中的元素存进栈中，链表前面的元素在栈底，后面的元素在栈顶，链表后面的元素先出栈。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">StackMethod</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; isk;</span><br><span class="line">    ListNode* tmp = head;</span><br><span class="line">    <span class="keyword">if</span>(head != <span class="literal">nullptr</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(tmp-&gt;next != <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            isk.push(tmp-&gt;data);</span><br><span class="line">            tmp = tmp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        isk.push(tmp-&gt;data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!isk.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; isk.top() &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        isk.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -397,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法与数据结构/" rel="tag"># 算法与数据结构</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -564,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单链表从尾到头打印的四种算法"><span class="nav-number">1.</span> <span class="nav-text">单链表从尾到头打印的四种算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#借用栈倒序输出链表"><span class="nav-number">1.1.</span> <span class="nav-text">借用栈倒序输出链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#翻转链表"><span class="nav-number">1.2.</span> <span class="nav-text">翻转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入法完成倒序"><span class="nav-number">1.4.</span> <span class="nav-text">插入法完成倒序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归方式实现"><span class="nav-number">1.5.</span> <span class="nav-text">递归方式实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#借用栈倒序输出链表"><span class="nav-number">1.1.</span> <span class="nav-text">借用栈倒序输出链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#翻转链表"><span class="nav-number">1.2.</span> <span class="nav-text">翻转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入法完成倒序"><span class="nav-number">1.4.</span> <span class="nav-text">插入法完成倒序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归方式实现"><span class="nav-number">1.5.</span> <span class="nav-text">递归方式实现</span></a></li></ol></li></ol></div>
             
 
           </div>
