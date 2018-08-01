@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://dn-coding-net-production-file.qbox.me/2fe22630-9581-11e8-b8c4-dbeba3bbab78.png?attname=4.PNG&e=1533129863&token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:b1N2SmSL-hCno4oqKOmlpEIW_WM=">
 <meta property="og:image" content="https://dn-coding-net-production-file.qbox.me/2fe29b60-9581-11e8-b8c4-dbeba3bbab78.png?attname=5.png&e=1533129863&token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:d9SqxO3hikmfr8fiAnBzn0vbK6Q=">
 <meta property="og:image" content="https://dn-coding-net-production-file.qbox.me/62f977c0-9587-11e8-96e8-c75d48a729e2.png?attname=6.png&e=1533130534&token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:y2511C0vXjltXBqA22G1q7gFQPk=">
-<meta property="og:updated_time" content="2018-08-01T12:48:44.830Z">
+<meta property="og:updated_time" content="2018-08-01T13:03:08.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猫眼电影App抓包获取评论数据接口">
 <meta name="twitter:description" content="&amp;#8195;&amp;#8195;之前在CSDN程序人生公众号上看到了这篇文章《邪不压正》评分持续走低，上万条网友评论揭秘，是救救姜文还是救救观众？,文中提到了通过抓包猫眼App发现了评论的数据接口：http://m.maoyan.com/mmdb/comments/movie/248566.json?_v_=yes&amp;amp;offset=1,其中248566属于电影的专属id，offset代表页数，但">
@@ -392,8 +392,8 @@
       
         <p>&#8195;&#8195;之前在CSDN程序人生公众号上看到了这篇文章<a href="https://mp.weixin.qq.com/s/J_5jJTV8onbTnTIaZssLxQ" target="_blank" rel="noopener">《邪不压正》评分持续走低，上万条网友评论揭秘，是救救姜文还是救救观众？</a>,文中提到了通过抓包猫眼App发现了评论的数据接口：<a href="http://m.maoyan.com/mmdb/comments/movie/248566.json?_v_=yes&amp;offset=1" target="_blank" rel="noopener">http://m.maoyan.com/mmdb/comments/movie/248566.json?_v_=yes&amp;offset=1</a>,其中248566属于电影的专属id，offset代表页数，但并未提及如何在猫眼App抓包。经过笔者的摸索，在尝试Charles等各种抓包工具后，踩了无数的坑之后，最终使用Fiddler抓取到了猫眼App上有关该电影的评论数据接口，现将本次抓取过程记录下来。PS.还是Fiddler大法好</p>
 <hr>
-<p>###使用工具与环境<br>windows10、抓包工具Fiddler、手机iphone6sp、猫眼专业版App</p>
-<p>###抓包过程<br>1.打开Fiddler Options，勾选Decrypt Https traffic选项,解密https请求。<br><img src="https://dn-coding-net-production-file.qbox.me/34f96700-9581-11e8-b8c4-dbeba3bbab78.png?attname=1.png&amp;e=1533128611&amp;token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:2lLLgWpDhvTlvuk-Y8AJkkj_gac=" alt="image"></p>
+<p>###使用工具与环境###<br>windows10、抓包工具Fiddler、手机iphone6sp、猫眼专业版App</p>
+<p>###抓包过程###<br>1.打开Fiddler Options，勾选Decrypt Https traffic选项,解密https请求。<br><img src="https://dn-coding-net-production-file.qbox.me/34f96700-9581-11e8-b8c4-dbeba3bbab78.png?attname=1.png&amp;e=1533128611&amp;token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:2lLLgWpDhvTlvuk-Y8AJkkj_gac=" alt="image"></p>
 <p>2.勾选Allow remote computers to connect ,允许别的机器把http/https请求发送到本机。<br><img src="https://dn-coding-net-production-file.qbox.me/2fe13bd0-9581-11e8-b8c4-dbeba3bbab78.png?attname=2.png&amp;e=1533129863&amp;token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:6FjUffZ9qlsqUnEpXXE7dxdgQuY=" alt="image"></p>
 <p>3.重启Fiddler，保证PC和手机在同一局域网下，并在手机上给wifi配置手动HTTP代理，服务器为PC的ip地址，端口号为8888。之后使用safari打开链接（http://本机IP地址:8888),点击网页中的”FiddlerRoot certificate”安装Fiddler的证书，安装完成后就可以用Fiddler抓取手机上的包了。如果遇见打开App无法联网的情况，注意检查手机设置通用里的本机中证书栏是否已经信任证书。<br><img src="https://dn-coding-net-production-file.qbox.me/2fe1b100-9581-11e8-b8c4-dbeba3bbab78.png?attname=3.PNG&amp;e=1533129863&amp;token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:Fc4ym7CX6-K0O960yDuRCDF0Zcs=" alt="image"></p>
 <p>4.手机打开猫眼App，打开评论栏，不断下滑加载评论,最终在Fiddler里截取到评论数据接口。<br><img src="https://dn-coding-net-production-file.qbox.me/2fe22630-9581-11e8-b8c4-dbeba3bbab78.png?attname=4.PNG&amp;e=1533129863&amp;token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:b1N2SmSL-hCno4oqKOmlpEIW_WM=" alt="image"></p>
